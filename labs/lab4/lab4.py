@@ -64,19 +64,22 @@ def rectangle():
     Formulas: area = (length)(width)   and    perimeter = 2(length+width)
     """
     pass
-    win = GraphWin("rectangle drawer", 300, 300)
+    win = GraphWin("rectangle drawer", 400, 400)
 
     p1 = win.getMouse()
     p2 = win.getMouse()
     r = Rectangle(p1, p2)
     r.draw(win)
-    length = abs(p2.getY() - p1.getY())
-    width = abs(p2.getX() - p1.getX())
-    area = length * width
+    length = abs(p2.getX() - p1.getY())
+    width = abs(p2.getX() - p1.getY())
 
-    area_text = Text(Point(p1, p2), "the area is" + str(area))
+    area = length * width
+    area_text = Text(Point(200, 20), "the area is" + str(area))
     area_text.draw(win)
 
+    perimeter = 2 * (length + width)
+    perimeter_txt = Text(Point(200, 40), "the perimeter is " + str(perimeter))
+    perimeter_txt.draw(win)
 
 
 def circle():
@@ -115,10 +118,10 @@ def pi2():
     print(math.pi - acc)
 
 def main():
-     squares()
-    #rectangle()
-    #circle()
-    # pi2()
+    squares()
+    rectangle()
+    circle()
+    pi2()
 
 
 main()
