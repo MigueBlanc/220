@@ -35,9 +35,10 @@ def main():
     rms = round(math.sqrt(avg), 3)
     harmonic_mean = round(num / acc_harmonic, 3)
     geometric_mean = round(geo_acc ** (1 / num), 3)
-    print("rms =", float(rms))
-    print("harmonic mean is :", float(harmonic_mean))
-    print("geometric mean is :", float(geometric_mean))
+
+    print( float(rms))
+    print(float(harmonic_mean))
+    print(float(geometric_mean))
 
 
 if __name__ == '__main__':
