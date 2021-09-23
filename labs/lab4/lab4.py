@@ -4,7 +4,7 @@ Name: <your name goes here – first and last>
 """
 
 from graphics import *
-
+import  math
 
 def squares():
     """  <---  You can use tripled quotes to write a multi-line comment....
@@ -30,11 +30,11 @@ def squares():
 
     # create a space to instruct user
     inst_pt = Point(width / 2, height - 10)
-    instructions = Text(inst_pt, "Click to move circle")
+    instructions = Text(inst_pt, "Click to move square")
     instructions.draw(win)
 
     # builds a circle
-    shape = Circle(Point(50, 50), 20)
+    shape = Rectangle(Point(50, 50), Point(70, 70))
     shape.setOutline("red")
     shape.setFill("red")
     shape.draw(win)
@@ -42,13 +42,14 @@ def squares():
     # allows the user to click multiple times to move the circle
     for i in range(num_clicks):
         p = win.getMouse()
-        c = shape.getCenter()  # center of circle
+        shape = Rectangle(Point(p.getX() - 10, p.getY() - 10), Point(p.getX() + 10, p.getY() + 10))
+        shape.setOutline("red")
+        shape.setFill("red")
+        shape.draw(win)
 
-        # move amount is distance from center of circle to the
-        # point where the user clicked
-        dx = p.getX() - c.getX()
-        dy = p.getY() - c.getY()
-        shape.move(dx, dy)
+    instructions.undraw()
+    instructions.setText("click to close")
+    instructions.draw(win)
 
     win.getMouse()
     win.close()
@@ -63,12 +64,60 @@ def rectangle():
     Formulas: area = (length)(width)   and    perimeter = 2(length+width)
     """
     pass
+    win = GraphWin("rectangle drawer", 300, 300)
 
+    p1 = win.getMouse()
+    p2 = win.getMouse()
+    r = Rectangle(p1, p2)
+    r.draw(win)
+    length = abs(p2.getY() - p1.getY())
+    width = abs(p2.getX() - p1.getX())
+    area = length * width
+
+    area_text = Text(Point(p1, p2), "the area is" + str(area))
+    area_text.draw(win)
+
+
+
+def circle():
+    # Open window
+    win = GraphWin('Double click Circle', 600, 600)
+
+    # Click for center
+    center = win.getMouse()
+
+    # Click for circumference
+    point = win.getMouse()
+
+    dx = point.getX() - center.getX()
+    dy = point.getY() - center.getY()
+
+    d = math.sqrt(dx ** 2 + dy ** 2)
+    w = Circle(center, d)
+
+    w.setFill('blue')
+    w.draw(win)
+
+    # pause for click in window
+    win.getMouse()
+    # close
+    win.close()
+
+def pi2():
+    n = eval(input("enter value of n:"))
+    acc = 0
+    den = 1
+    sign = 1
+    for i in range(1,n):
+        acc += (sign * (4/den))
+        den += 2
+        sign += -1
+    print(math.pi - acc)
 
 def main():
-    squares()
-    # rectangle()
-    # circle()
+     squares()
+    #rectangle()
+    #circle()
     # pi2()
 
 
