@@ -21,7 +21,6 @@ def main():
     for number_range in range(num):
         # rms
         numbers = float(input("enter value " + str(number_range + 1) + ":"))
-        tt_acc += tt_acc
         square = numbers ** 2
         total_sum += square
         # harmonic mean
