@@ -21,7 +21,7 @@ def initials():
     for i in range(n):
         first_name = input("enter the first name of student")
         last_name = input("enter" + first_name + "'s" "last name")
-        print(first_name + "'s initials are:" + first_name[0] + last_name[0])
+        print(first_name + "' s initials are:" + first_name[0] + last_name[0])
 
 
 def names():
@@ -54,14 +54,15 @@ def pig_latin ():
     for word in x:
         print(word[1:] + "ay", end= " ")
 
+
 def main():
-name_reverse()
-company_name()
-initials()
-names()
-thirds()
-word_average()
-pig_latin()
+    name_reverse()
+    company_name()
+    initials()
+    names()
+    thirds()
+    word_average()
+    pig_latin()
 
 
 
