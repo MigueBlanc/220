@@ -13,6 +13,7 @@ def number_words(in_file_name, output_file):
         for words in words:
             output.write(str(i) + words + "\n")
 
+
 def hourly_wages(in_hourly_file, out_hourly_file):
     in_hourly = open(in_hourly_file, "r")
     out_hourly = open(out_hourly_file, "w+")
@@ -23,6 +24,7 @@ def hourly_wages(in_hourly_file, out_hourly_file):
         wage_total = wage * int(parts[3])
         out_hourly.write(parts[0] + parts[1] + str(wage_total))
 
+
 def calc_check_sum(isbn):
     isbn_rev = isbn[::-1]
     acc = 0
@@ -30,6 +32,7 @@ def calc_check_sum(isbn):
         numb = int(isbn_rev[i]) * (i + 1)
         acc = acc + numb
     return acc
+
 
 def send_message(file,friend):
     in_file = open(file, "r")
@@ -41,8 +44,10 @@ def send_message(file,friend):
 def encode_better(message, key):
     return message
 
+
 def encode(message, key):
     return message
+
 
 def send_safe_message(in_file_name, friend, key):
     in_file = open(in_file_name, "r")
