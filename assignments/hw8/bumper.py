@@ -24,9 +24,8 @@ def main():
     dx2 = randint(-1, 1)
     dy2 = randint(-1, 1)
 
-    # distance = math.sqrt((p2.getX() - p1.getX()**2 +(p2.getY()- p1.getY())**2)
-
-    for i in range(10000):
+    distance = math.sqrt((p2.getX() - p1.getX()**2 + (p2.getY() - p1.getY())**2)
+     for i in range(10000):
         c.move(dx, dy)
         center = c.getCenter()
         cx, cy = center.getX(), center.getY()
@@ -41,8 +40,7 @@ def main():
             dx2 = -dx2
         if 200 - abs(cy2) == radius:
             dy2 = -dy2
-        # if distance <= circle.getradius * 2:
-        #     dx = -dx
+
         update(80)
         if win.checkMouse() is not None:
             break
