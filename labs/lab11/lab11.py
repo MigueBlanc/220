@@ -45,7 +45,7 @@ def play_game():
             if tries == 0:
                 print('You Lost,Word: {}'.format(word))
             else:
-                print('Wrong Guess,{} round left!'.format(tries))
+                print('wrong,{} round left!'.format(tries))
 
 
 def main():
