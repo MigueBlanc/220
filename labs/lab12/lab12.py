@@ -19,7 +19,9 @@ def read_data(in_file):
     data.split()
     i = 0
     while i < len(data):
-        data[i] = int[i]
+        data[i] = int(data[i])
+        i += 1
+    return data
 
 
 def search(lst, value):
@@ -37,6 +39,7 @@ def good_input():
         x = eval(input("enter a number between 1-10:"))
     return x
 
+
 def num_digits():
     num = eval(input("enter a positive interger: "))
     while num > 0:
@@ -45,7 +48,7 @@ def num_digits():
             num//=10
             digits += 1
         print(digits)
-            num = eval(input("enter a positive interger: "))
+        num = eval(input("enter a positive interger: "))
 
 
 def hi_low_game():
