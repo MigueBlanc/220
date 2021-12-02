@@ -1,0 +1,2 @@
+<employeed_id>, <name>, <sales amount>
+
